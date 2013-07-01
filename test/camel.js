@@ -20,3 +20,8 @@ test('camelize a nested object', function (t) {
         ]
     });
 });
+
+test('string', function (t) {
+    t.plan(1);
+    t.equal(camelize('one_two'), 'oneTwo');
+});
