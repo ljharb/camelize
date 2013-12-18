@@ -1,6 +1,6 @@
 {
     "name": "camelize",
-    "version": "0.1.1",
+    "version": "0.1.2",
     "description": "recursively transform key strings to camel-case",
     "main": "index.js",
     "devDependencies": {
