@@ -25,3 +25,10 @@ test('string', function (t) {
     t.plan(1);
     t.equal(camelize('one_two'), 'oneTwo');
 });
+
+test('only camelize strings that are the root value', function (t) {
+    t.plan(2);
+    t.equal(camelize('foo-bar'), 'fooBar');
+    var res = camelize({ 'foo-bar': 'baz-foo' });
+    t.deepEqual(res, { fooBar: 'baz-foo' });
+});
