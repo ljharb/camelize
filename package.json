@@ -4,10 +4,12 @@
     "description": "recursively transform key strings to camel-case",
     "main": "index.js",
     "devDependencies": {
+        "aud": "^2.0.1",
         "tape": "^5.6.1"
     },
     "scripts": {
-        "test": "tape test/*.js"
+        "test": "tape test/*.js",
+        "posttest": "aud --production"
     },
     "repository": {
         "type": "git",
