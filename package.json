@@ -11,9 +11,9 @@
     },
     "repository": {
         "type": "git",
-        "url": "git://github.com/substack/camelize.git"
+        "url": "git://github.com/ljharb/camelize.git"
     },
-    "homepage": "https://github.com/substack/camelize",
+    "homepage": "https://github.com/ljharb/camelize",
     "keywords": [
         "camel-case",
         "json",
