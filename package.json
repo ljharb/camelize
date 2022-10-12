@@ -18,7 +18,8 @@
 		"prepublishOnly": "safe-publish-latest",
 		"lint": "eslint --ext=js,mjs .",
 		"pretest": "npm run lint",
-		"test": "tape test/*.js",
+		"tests-only": "tape 'test/**/*.js'",
+		"test": "npm run tests-only",
 		"posttest": "aud --production"
 	},
 	"repository": {
