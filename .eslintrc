@@ -6,7 +6,6 @@
     "rules": {
         "camelcase": 0,
         "func-style": 1,
-        "indent": [2, 4],
         "max-statements-per-line": 0,
         "no-param-reassign": 1,
         "no-restricted-syntax": 1,
