@@ -1,3 +1,5 @@
+'use strict';
+
 var camelize = require('../');
 var obj = {
     fee_fie_foe: 'fum',

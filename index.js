@@ -1,12 +1,14 @@
-module.exports = function(obj) {
-    if (typeof obj === 'string') return camelCase(obj);
+'use strict';
+
+module.exports = function (obj) {
+    if (typeof obj === 'string') { return camelCase(obj); }
     return walk(obj);
 };
 
-function walk (obj) {
-    if (!obj || typeof obj !== 'object') return obj;
-    if (isDate(obj) || isRegex(obj)) return obj;
-    if (isArray(obj)) return map(obj, walk);
+function walk(obj) {
+    if (!obj || typeof obj !== 'object') { return obj; }
+    if (isDate(obj) || isRegex(obj)) { return obj; }
+    if (isArray(obj)) { return map(obj, walk); }
     return reduce(objectKeys(obj), function (acc, key) {
         var camel = camelCase(key);
         acc[camel] = walk(obj[key]);
@@ -15,7 +17,7 @@ function walk (obj) {
 }
 
 function camelCase(str) {
-    return str.replace(/[_.-](\w|$)/g, function (_,x) {
+    return str.replace(/[_.-](\w|$)/g, function (_, x) {
         return x.toUpperCase();
     });
 }
@@ -36,13 +38,13 @@ var has = Object.prototype.hasOwnProperty;
 var objectKeys = Object.keys || function (obj) {
     var keys = [];
     for (var key in obj) {
-        if (has.call(obj, key)) keys.push(key);
+        if (has.call(obj, key)) { keys.push(key); }
     }
     return keys;
 };
 
-function map (xs, f) {
-    if (xs.map) return xs.map(f);
+function map(xs, f) {
+    if (xs.map) { return xs.map(f); }
     var res = [];
     for (var i = 0; i < xs.length; i++) {
         res.push(f(xs[i], i));
@@ -50,8 +52,8 @@ function map (xs, f) {
     return res;
 }
 
-function reduce (xs, f, acc) {
-    if (xs.reduce) return xs.reduce(f, acc);
+function reduce(xs, f, acc) {
+    if (xs.reduce) { return xs.reduce(f, acc); }
     for (var i = 0; i < xs.length; i++) {
         acc = f(acc, xs[i], i);
     }

@@ -1,3 +1,5 @@
+'use strict';
+
 var test = require('tape');
 var camelize = require('../');
 
@@ -13,10 +15,10 @@ test('camelize a nested object', function (t) {
     t.plan(1);
     var res = camelize(obj);
     t.deepEqual(res, {
-        "feeFieFoe": "fum",
-        "beepBoop": [
-            { "abcXyz": "mno" },
-            { "fooBar": "baz" }
+        feeFieFoe: 'fum',
+        beepBoop: [
+            { abcXyz: 'mno' },
+            { fooBar: 'baz' }
         ]
     });
 });
