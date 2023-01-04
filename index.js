@@ -7,7 +7,7 @@ module.exports = function (obj) {
 
 function walk(obj) {
 	if (!obj || typeof obj !== 'object') { return obj; }
-	if (isDate(obj) || isRegex(obj)) { return obj; }
+	if (isDate(obj) || isRegex(obj) || Buffer.isBuffer(obj)) { return obj; }
 	if (isArray(obj)) { return map(obj, walk); }
 	return reduce(objectKeys(obj), function (acc, key) {
 		var camel = camelCase(key);
