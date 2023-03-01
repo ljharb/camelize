@@ -1,5 +1,7 @@
 'use strict';
 
+var isBuffer = require('is-buffer');
+
 module.exports = function (obj) {
 	if (typeof obj === 'string') { return camelCase(obj); }
 	return walk(obj);
@@ -7,7 +9,7 @@ module.exports = function (obj) {
 
 function walk(obj) {
 	if (!obj || typeof obj !== 'object') { return obj; }
-	if (isDate(obj) || isRegex(obj)) { return obj; }
+	if (isDate(obj) || isRegex(obj) || isBuffer(obj)) { return obj; }
 	if (isArray(obj)) { return map(obj, walk); }
 	return reduce(objectKeys(obj), function (acc, key) {
 		var camel = camelCase(key);

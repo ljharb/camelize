@@ -80,5 +80,8 @@
 		"ignore": [
 			".github/workflows"
 		]
+	},
+	"dependencies": {
+		"is-buffer": "^1.1.6"
 	}
 }

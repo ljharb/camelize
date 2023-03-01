@@ -40,6 +40,12 @@ test('regex', function (t) {
 	t.equal(camelize(r), r);
 });
 
+test('buffer', function (t) {
+	t.plan(1);
+	var b = Buffer.alloc(10);
+	t.equal(camelize(b), b);
+});
+
 test('only camelize strings that are the root value', function (t) {
 	t.plan(2);
 	t.equal(camelize('foo-bar'), 'fooBar');
